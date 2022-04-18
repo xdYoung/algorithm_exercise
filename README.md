@@ -6,5 +6,6 @@ algorithm_with_java
     - 2020/40/18日，测试Union-Find算法[union-find-exercise](./src/com/young/union_find_exercise/QuickUnionExercise.java)
     - 动态连通性知识点说明：[动态连通性知识点](./src/com/young/union_find_exercise/动态连通性知识点.md)
     - 算法实现：
+        - 算法实现可视化图像：[union-find-visual](./src/com/young/union_find_exercise/union-find-detail.jpg)
         - quick-find算法[quick-find-algorithm](./src/com/young/union_find_exercise/QuickFindExercise.java)
         - quick-union算法[union-find-algorithm](./src/com/young/union_find_exercise/UnionFindExercise.java)
