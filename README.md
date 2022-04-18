@@ -9,3 +9,5 @@ algorithm_with_java
         - 算法实现可视化图像：[union-find-visual](./src/com/young/union_find_exercise/union-find-detail.jpg)
         - quick-find算法[quick-find-algorithm](./src/com/young/union_find_exercise/QuickFindExercise.java)
         - quick-union算法[union-find-algorithm](./src/com/young/union_find_exercise/UnionFindExercise.java)
+        - 加权quick-union算法[weighted-quick-union-algorithm](./src/com/young/union_find_exercise/WeightedQuickUnionExercise.java)
+    
