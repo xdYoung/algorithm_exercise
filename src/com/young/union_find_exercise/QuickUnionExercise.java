@@ -1,16 +1,20 @@
 package com.young.union_find_exercise;
 
 import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdDraw;
 import edu.princeton.cs.algs4.StdOut;
 
-public class QuickFindExercise {
-    // 将对象称为触点、将整数对称为连接，将等价类称为连通分量或是简称分量。
-    private int[] id;   // 分量id（开始以触点作为索引），索引的值就是连通分量的标识符号，可以看作是一系列相连对象的集合叫做一个连通分量。
-    private int count;  // 分量数量
+import java.awt.*;
 
-    public QuickFindExercise(int N){
-        // 初始化分量id数组，起始的分量标识符即为触点的索引
+public class QuickUnionExercise {
+    // 此为quick-union的实现
+    private int[] id;   // 仍然是定义了一个起始以触点为索引的id[]，但是id[]表示的元素不是连通分量，而是另外一个触点
+    private int count;  // 仍表示的是触点的数量
+
+    public QuickUnionExercise(int N){
+        // 初始化的分量数量为N
         this.count = N;
+        // 初始化的id[]元素是以触点为索引
         this.id = new int[N];
         for (int i = 0; i < N; i++) {
             id[i] = i;
@@ -18,32 +22,24 @@ public class QuickFindExercise {
     }
 
     public int count(){
-        // 返回连通分量的数量
         return this.count;
     }
 
     public int find(int p){
-        return id[p];
+        // quick-union中的id[]元素表示的不是连通分量，而是另一个触点的名称，这样一个找一个，直到找到根触点形成一个树的结构
+        while (p != id[p]) p = id[p];
+        return p;
     }
 
     public boolean connected(int p, int q){
-        // 判断整数对中整数p和整数q是否在同一个连通分量中，返回一个布尔值类型
         return find(p) == find(q);
     }
 
     public void union(int p, int q){
-        // 将p和q归并到相同的分量中
-        int pID = find(p);
-        int qID = find(q);
-
-        // 如果p和q已经在相同的分量之中则不需要采取任何行动
-        if(pID == qID) return;
-
-        // 将p的分量重命名为q的名称
-        for (int i = 0; i < id.length; i++) {
-            if(id[i] == pID) id[i] = qID;
-        }
-        // 连通了两个分量后，分量的数量需要减一
+        int pRoot = find(p);
+        int qRoot = find(q);
+        if(pRoot == qRoot) return;
+        id[pRoot] = qRoot;
         count--;
     }
 
@@ -69,22 +65,31 @@ public class QuickFindExercise {
     public static void main(String[] args){
         // tinyUF中的数据含义：第一行为10个触点，其余行表示整数对连接。mediumUF和largeUF含义一样。
         // 测试文件：tinyUF、mediumUF、largeUF
-        String fPath = fPath("tinyUF");
+        String fPath = fPath("mediumUF");
         if (fPath.equals("-1")){
             System.out.println("对不起，不存在测试数据文件！");
         }
         else{
+            StdDraw.setXscale(-1, 25);
+            StdDraw.setYscale(-1, 25);
+            StdDraw.setPenColor(StdDraw.BLACK);
+
             In in = new In(fPath);
             int N = in.readInt();
-            QuickFindExercise qfUF = new QuickFindExercise(N);
+            QuickUnionExercise quUF = new QuickUnionExercise(N);
             while(!in.isEmpty()){
                 int p = in.readInt();
                 int q = in.readInt();
-                if(qfUF.connected(p, q)) continue;
-                qfUF.union(p,q);
+//                StdDraw.setPenRadius(.005);
+//                StdDraw.point(p%25,p/25);
+//                StdDraw.point(q%25,q/25);
+                if(quUF.connected(p, q)) continue;
+                quUF.union(p,q);
                 StdOut.println(p + " " + q);
+//                StdDraw.setPenRadius(.001);
+                StdDraw.line(p%25, p/25, q%25, q/25);
             }
-            StdOut.println("components is : " + qfUF.count());
+            StdOut.println("components is : " + quUF.count());
             in.close();
         }
     }
