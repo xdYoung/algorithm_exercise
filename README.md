@@ -1,6 +1,9 @@
 # algorithm_exercise
 algorithm_with_java
-- 2022/03/29和30日更新：链表实现的stack栈、queue队列、bag背包算法
+- 2022/03/29和30日更新：
+    - 链表实现的stack栈: [LinkedList_Stack](./src/com/young/linked_list/LinkedListStack.java)
+    - 链表实现queue队列: [LinkedList_Queue](./src/com/young/linked_list/LinkedListQueue.java)
+    - 链表实现bag背包算法: [LinkedList_Bag](./src/com/young/linked_list/LinkedListBag.java)
 - 2022/04/07日，算法分析实践测试代码
 - union-find算法：
     - 2020/40/18日，测试Union-Find算法[union-find-exercise](./src/com/young/union_find_exercise/QuickUnionExercise.java)
