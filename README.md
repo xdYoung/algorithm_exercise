@@ -35,5 +35,7 @@ algorithm_with_java
         - 原地归并的抽象方法：
             - 实现归并的一种直接了当的办法是将两个不同的有序数组归并到第三个数组中，两个数组中的元素应该都实现了Comparable接口。
             - 实现方法很简单，创建一个适当大小的数组然后将两个输入数组中的元素一个个从小到大放入这个数组中。
-
+        - 自顶向下的归并排序（递归使用）：[Merge_Up_Down_Sort](./src/com/young/sort_algorithm/Merge_Up_Down_Sort.java)
+        - 自底向上的归并排序：[Merge_Down_Up_Sort](./src/com/young/sort_algorithm/Merge_Down_Up_Sort.java)
+    
           
