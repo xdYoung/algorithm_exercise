@@ -8,7 +8,7 @@ public class Shell_Sort {
     public static void sort(Comparable[] a){
         int N = a.length;
         int h = 1;
-        while(h < N/3) h = h*3 + 1;
+        while(h < N/3) h = h*3 + 1; // 1 ， 4 ， 13 ， 40 ， 121， 364 ... 称为递增序列。从N/3会递减至1。
         while(h >= 1){
             for (int i = h; i < N; i++) {
                 for (int j = i; j >= h && less(a[j], a[j-h]); j -= h) {
