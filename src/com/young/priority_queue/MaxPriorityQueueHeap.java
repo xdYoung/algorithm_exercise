@@ -64,9 +64,9 @@ public class MaxPriorityQueueHeap<Key extends Comparable<Key>> {
             pq.insert(t);
             StdOut.println(t);
             if(pq.size() > M){
-                pq.delMax(); // 如果优先队列中存在M+1个元素则删除其中最小的元素
+                pq.delMax(); // 如果优先队列中存在M+1个元素则删除其中最大的元素
             }
-        }// 最大的M个元素都在优先队列中
+        }// 最小的M个元素都在优先队列中
         StdOut.println("筛选出来的最小的 "+ M + " 个Transaction" + "********************");
         Stack<Transaction> stack = new Stack<>();
         while(!pq.isEmpty()) stack.push(pq.delMax());
