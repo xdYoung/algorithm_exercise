@@ -37,5 +37,7 @@ algorithm_with_java
             - 实现方法很简单，创建一个适当大小的数组然后将两个输入数组中的元素一个个从小到大放入这个数组中。
         - 自顶向下的归并排序（递归使用）：[Merge_Up_Down_Sort](./src/com/young/sort_algorithm/Merge_Up_Down_Sort.java)
         - 自底向上的归并排序：[Merge_Down_Up_Sort](./src/com/young/sort_algorithm/Merge_Down_Up_Sort.java)
+    - 快速排序:[Quick_Sort](./src/com/young/sort_algorithm/Quick_sort.java)
+        - 快速排序递归地将子数组a\[lo..hi]排序，先用partition()方法将a\[j]放到一个合适的位置，然后在递归调用将其它位置的元素排序。
+        - 切分方法：一般策略是先随意地取a\[lo]作为切分元素，即将会被排定的元素。然后从数组的左端开始向右扫描直到找到一个大于等于它的元素，再从右端开始向左端扫描直到找到一个小于等于它的元素。交换这两个元素的位置。如此继续，当两个指针相遇时，相遇的位置之前的元素小于等于a\[lo]，之后的元素大于等于a\[lo].将切分元素a\[lo]和左子数组最右侧的元素交换并返回这个位置即可。
     
-          
