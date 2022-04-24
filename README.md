@@ -54,4 +54,10 @@ algorithm_with_java
     - 堆有序可以用数组来表示。向数组中插入元素，则相当于从尾部插入，插入元素上浮到合适位置保持堆有序。删除第一个元素，并用尾部元素替换，则会下沉保持堆有序。
     - 堆有序对优先队列API的实现能够保证插入元素和删除元素这两个操作的用时和队列的大小仅成对数关系。
     - 基于堆的最大优先队列实现: [MaxPriorityQueue_Heap](./src/com/young/priority_queue/MaxPriorityQueueHeap.java)
+- 查找
+    - 符号表：
+        - 定义：符号表是一种存储键值对的数据结构，支持两种操作：插入（put），即将一组新的键值对存入表中；查找（get），即根据给定的键得到相应的值。
+        - 符号表用例：[Symbol_Table_Case](./src/com/young/search_algorithm/symbol_table/SymbolTableExample.java)
+        - 频率技术用例：[Frequency_Counter_Case](./src/com/young/search_algorithm/symbol_table/FrequencyCounterExample.java)
+        - 基于链表的顺序查找符号表：[Sequential_Search_ST](./src/com/young/search_algorithm/SequentialSearchSTExercise.java)
     
